@@ -58,6 +58,29 @@ var sCheckEmailAddress = function (localEmail) {
 	}	
 }
 
+// Array: Find the smallest value in an array that is greater than a given number
+
+var aSmallestValue = function(numArray, number) {
+	var largerNums = [],
+		smallestNum;
+
+	for (i = 0; i < numArray.length; i++) {
+		if (numArray[i] > number) {
+			largerNums.push(numArray[i]);
+		}
+	}
+
+	smallestNum = largerNums[0];
+
+	for (j = 0; j < largerNums.length; j++) {
+		if (smallestNum > largerNums[j]) {
+			smallestNum = largerNums[j];
+		}
+	}
+
+	return ("The smallest number that is greater than " + number + " is " + smallestNum + ".");
+}
+
 	
 	console.log(nDecPlaceAdded(3.6));
 	console.log(nDecPlaceAdded(9.9));
@@ -67,3 +90,7 @@ var sCheckEmailAddress = function (localEmail) {
 	
 	console.log(sCheckEmailAddress("irv5@fullsail.edu"));
 	console.log(sCheckEmailAddress("testemail.com"));
+	
+	var numArray = [6, 17, 24]
+	console.log(aSmallestValue(numArray, 7));
+	

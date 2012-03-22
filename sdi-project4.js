@@ -91,6 +91,30 @@ var sCharChanged = function (string, firstChar, secondChar) {
 
 	return myString;
 }
+
+// Is the string a URL? (Does it start with http: or https:?)
+
+var sUrlCheck = function (string) {
+	var url = string,
+		check = "",
+		checkArray = [],
+		end = url.indexOf(":");
+
+	checkArray[0] = "http:";
+	checkArray[1] = "https:";
+
+	check = url.substring(0, end + 1);
+
+	if (check === checkArray[0]) {
+		return (url + " is a valid URL.");
+	}
+	else if (check === checkArray[1]) {
+		return (url + " is a valid URL.");
+	}
+	else {
+		return (url + " is not a valid URL.");
+	}
+}
 	
 	console.log(nDecPlaceAdded(3.6));
 	console.log(nDecPlaceAdded(9.9));
@@ -106,3 +130,5 @@ var sCharChanged = function (string, firstChar, secondChar) {
 	
 	console.log(sCharChanged("a, b, c," ,",","/"));
 	
+	console.log(sUrlCheck("http://www.fullsail.com/"));
+	console.log(sUrlCheck("https://fullsail.com"));

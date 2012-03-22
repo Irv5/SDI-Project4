@@ -30,6 +30,33 @@ var bPhoneNumberCheck = function (phoneNumber) {
 	}
 }
 
+// String: Does a string follow an aaa@bbb.ccc pattern like an email address?
+
+var sCheckEmailAddress = function (localEmail) {
+	var email = localEmail,
+		checkAt = 0,
+		checkDot = 0;
+
+	checkAt = email.indexOf("@");
+	checkDot = email.indexOf(".");
+
+	if (checkAt != -1 && checkDot != -1) {
+		if (checkAt < checkDot) {
+			if (checkDot - checkAt != 1) {
+				return (email + " is a valid email.");
+			}
+			else {
+				return (email + " is not a valid email.");
+			}
+		}
+		else {
+			return (email + " is not a valid email.");
+		}
+	}
+	else {
+		return (email + " is not a valid email.");
+	}	
+}
 
 	
 	console.log(nDecPlaceAdded(3.6));
@@ -37,3 +64,6 @@ var bPhoneNumberCheck = function (phoneNumber) {
 	
 	console.log(bPhoneNumberCheck("314-583-0268"));
 	console.log(bPhoneNumberCheck("7046379381"));
+	
+	console.log(sCheckEmailAddress("irv5@fullsail.edu"));
+	console.log(sCheckEmailAddress("testemail.com"));

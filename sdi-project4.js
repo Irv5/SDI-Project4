@@ -81,6 +81,16 @@ var aSmallestValue = function(numArray, number) {
 	return ("The smallest number that is greater than " + number + " is " + smallestNum + ".");
 }
 
+// Given a string that is a list of things separated by a given string, as well as another string separator, return a string with the first separator changed to the second: "a,b,c" + "," + "/" → "a/b/c".
+
+var sCharChanged = function (string, firstChar, secondChar) {
+	var myString = string,
+		first = new RegExp(firstChar, "g"); // The "g" stands for "global", which replaces all matches, and not just the first one.
+
+	myString = myString.replace(first, secondChar);
+
+	return myString;
+}
 	
 	console.log(nDecPlaceAdded(3.6));
 	console.log(nDecPlaceAdded(9.9));
@@ -93,4 +103,6 @@ var aSmallestValue = function(numArray, number) {
 	
 	var numArray = [6, 17, 24]
 	console.log(aSmallestValue(numArray, 7));
+	
+	console.log(sCharChanged("a, b, c," ,",","/"));
 	
